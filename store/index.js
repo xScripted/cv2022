@@ -106,6 +106,18 @@ export const state = () => ({
             logo: '/img/icons/howler.png',
             name: 'HOWLER'
         },
+        react: {
+          logo: '/img/icons/react.png',
+          name: 'REACT'
+        },
+        reactNative: {
+          logo: '/img/icons/react.png',
+          name: 'REACT NATIVE'
+        },
+        expo: {
+          logo: '/img/icons/expo.png',
+          name: 'EXPO'
+        }
     },
     projects: {
         MusicPlayer: {
@@ -167,7 +179,7 @@ export const state = () => ({
         },
         aje3d: {
             id: 'aje3d',
-            title: 'Ajedrez 3D',
+            title: 'Chess 3D',
             techs: [
                 'node',
                 'threejs',
@@ -181,7 +193,21 @@ export const state = () => ({
             github: 'https://github.com/xScripted/3DCHESSDAW2',
             web: 'https://aje3d.herokuapp.com/',
             media: 'img/portfolio/aje3d.png'
-        }
+        },
+        pexelsNative: {
+          id: 'pexelsNative',
+          title: 'Image downloader',
+          techs: [
+              'reactNative',
+              'expo'
+          ],
+          description: `
+              A simple mobile APP to browse and download images from Pexels API
+          `,
+          github: 'https://github.com/xScripted/pexels-native',
+          web: 'https://drive.google.com/file/d/1ATJ1obDml1hSNBzMwEjDPIwcODfZaloC/view?usp=sharing',
+          media: 'img/portfolio/pexels.jpeg'
+      }
     }
 })
 

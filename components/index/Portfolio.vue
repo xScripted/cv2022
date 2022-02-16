@@ -4,13 +4,15 @@
       <div class="section-title">Portfolio</div>
       <div class="portfolio-grid">
         <div class="product" 
+          :class="project.id"
           v-for="project of allProjects" 
           :key="project.title" 
           :style="{ backgroundImage: 'url(' + project.media + ')' }">
           <div class="product-info">
             <div class="pr-title"> {{ project.title }} </div>
-            <div class="pr-tech"> {{ prettyTechs(project.techs) }} </div>
-
+            <div class="pr-tech"> 
+              <div v-for="tech of project.techs" :key="tech"> {{ techs[tech].name }} </div>
+            </div>
             <div class="pr-btns">
               <div @click="openProject(project.id)">More information</div>
             </div>
@@ -25,16 +27,13 @@
 import { mapMutations, mapGetters } from 'vuex';
 export default {
     computed: {
-      ...mapGetters(['allProjects'])
+      ...mapGetters(['allProjects', 'techs'])
     },
     methods: {
       ...mapMutations(['updateClosed', 'updateProject']),
       openProject(name) {
         this.updateProject(name);
         this.updateClosed(false);
-      },
-      prettyTechs(techs) {
-        return techs.map( x => ' ' + x.toUpperCase()).toString();
       }
     }
 }
@@ -77,6 +76,10 @@ export default {
         }
       }
 
+      &.pexelsNative { 
+        background-position-x: center;
+      }
+
       .product-info {
         transition: 0.3s ease-in-out;
         width: 100%;
@@ -93,6 +96,15 @@ export default {
 
         .pr-tech {
           padding: 25px 10px;
+
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+
+          div {
+            font-size: 14px;
+            padding-left: 10px;
+          }
         }
 
         .pr-btns {

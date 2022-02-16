@@ -29,6 +29,10 @@
                             <div class="logo" :style="{ backgroundImage: `url('${ techs.wordpress.logo }')`}"> </div>
                             <div class="name"> {{ techs.wordpress.name }} </div>
                         </div>
+                        <div class="card">
+                            <div class="logo" :style="{ backgroundImage: `url('${ techs.react.logo }')`}"> </div>
+                            <div class="name"> {{ techs.react.name }} </div>
+                        </div>
                     </div>
     
                     <div class="list">
